@@ -25,7 +25,7 @@ public class Appliance {
         }
     }
 
-    public String toString(){
+    public String toStringInfo(){
         String thisInfo = applianceType + " : ";
         int counter = 0;
         for (String criteria : appliance) {

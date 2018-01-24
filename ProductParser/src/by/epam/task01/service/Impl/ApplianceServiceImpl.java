@@ -7,10 +7,12 @@ import by.epam.task01.entity.criteria.Criteria;
 import by.epam.task01.service.ApplianceService;
 import by.epam.task01.service.validation.Validator;
 
+import java.io.IOException;
+
 public class ApplianceServiceImpl implements ApplianceService {
 
     @Override
-    public <E> Appliance find(Criteria<E> criteria) throws Exception{
+    public <E> Appliance find(Criteria<E> criteria) throws IOException {
         if(!Validator.criteriaValidator(criteria)){
             return null;
         }

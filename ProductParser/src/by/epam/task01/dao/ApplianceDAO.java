@@ -7,5 +7,5 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public interface ApplianceDAO {
-    <E> Appliance find(Criteria<E> criteria) throws Exception;
+    <E> Appliance find(Criteria<E> criteria) throws IOException;
 }

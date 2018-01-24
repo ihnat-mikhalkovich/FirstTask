@@ -4,6 +4,6 @@ import by.epam.task01.entity.Appliance;
 
 public class PrintApplianceInfo {
     public static void print(Appliance appliance){
-        System.out.println(appliance.toString());
+        System.out.println(appliance.toStringInfo());
     }
 }

@@ -8,7 +8,7 @@ public class Validator {
     public static <E>boolean criteriaValidator(Criteria<E> criteria){
         if (criteria == null)
             return false;
-        Map<E, Object> records = criteria.getCriteriaHashMap();
+        Map<E, Object> records = criteria.getCriteria();
         for (Map.Entry<E, Object> entry : records.entrySet()) {
             Object value = entry.getValue();
             if ("".equals(value)) return false;

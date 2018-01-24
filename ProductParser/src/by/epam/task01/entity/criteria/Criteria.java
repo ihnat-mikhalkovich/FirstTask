@@ -20,12 +20,11 @@ public class Criteria<E> {
         this.applianceType = applianceType;
     }
 
-    public Map<E, Object> getCriteriaHashMap() {
+    public Map<E, Object> getCriteria() {
         return criteria;
     }
 
-    @Override
-    public String toString(){
+    public String getCriteriaInfo(){
         String criteriaString = "Criteria<" + applianceType + ">[applianceType=" + applianceType +
                 ";" + "Map<" + applianceType + ",Object>:(";
         int counter = 0;
@@ -45,12 +44,18 @@ public class Criteria<E> {
         String[] mapping = new String[criteria.size()];
         int i = 0;
         for (Map.Entry<E, Object> entry : criteria.entrySet()) {
-            E key = entry.getKey();
-            Object value = entry.getValue();
-            mapping[i] = key.toString() + "=" + value.toString();
+            mapping[i] = entryToString(entry);
             i++;
         }
         return mapping;
+    }
+
+    public static <E> String entryToString(Map.Entry<E, Object> entry){
+        StringBuilder entryString = new StringBuilder();
+        entryString.append(entry.getKey());
+        entryString.append('=');
+        entryString.append(entry.getValue());
+        return entryString.toString();
     }
 
 }
