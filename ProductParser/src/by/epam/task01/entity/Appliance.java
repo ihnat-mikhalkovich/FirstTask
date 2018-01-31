@@ -39,4 +39,21 @@ public class Appliance {
         return thisInfo;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Appliance appliance1 = (Appliance) o;
+
+        if (appliance != null ? !appliance.equals(appliance1.appliance) : appliance1.appliance != null) return false;
+        return applianceType != null ? applianceType.equals(appliance1.applianceType) : appliance1.applianceType == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = appliance != null ? appliance.hashCode() : 0;
+        result = 31 * result + (applianceType != null ? applianceType.hashCode() : 0);
+        return result;
+    }
 }
